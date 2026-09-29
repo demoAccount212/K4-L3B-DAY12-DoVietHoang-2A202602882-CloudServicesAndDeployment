@@ -1,6 +1,6 @@
 # Thông Tin Deploy — Checkpoint 5
 
-> File này đã hoàn thiện sau khi deploy xong. `pytest tests/test_cp5.py` đọc file này
+> Điền file này sau khi deploy xong. `pytest tests/test_cp5.py` đọc file này
 > để tìm địa chỉ service của bạn và gọi thử.
 >
 > **Chỉ ghi TÊN biến môi trường, tuyệt đối không dán giá trị API key vào đây.**
