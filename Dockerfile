@@ -19,8 +19,8 @@ RUN groupadd -r appgroup && useradd -r -g appgroup -M appuser
 
 USER appuser
 
-HEALTHCHECK CMD curl -f http://localhost:${PORT:-8000}/health || exit 1
+HEALTHCHECK CMD python -c "import urllib.request,os; urllib.request.urlopen('http://localhost:'+os.environ.get('PORT','8000')+'/health')"
 
 EXPOSE 8000
 
-CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
+CMD ["sh", "-c", "exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
